@@ -3,7 +3,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, CallbackQueryHandler
 
 # 🔐 Replace this with your actual bot token from BotFather
-BOT_TOKEN = '8123918229:AAHNBboV8HhgMoOj-wOhZCw94bK3Z2ZoM-0'
+BOT_TOKEN = 'BOT_TOKEN'
 
 # 📁 Folder where PDFs are stored
 PAPER_FOLDER = 'bpharm_bot_18'
