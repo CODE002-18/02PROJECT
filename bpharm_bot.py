@@ -1,4 +1,3 @@
-import asyncio
 import logging
 import os
 from flask import Flask, render_template
@@ -85,7 +84,7 @@ def setup_telegram_bot():
         
         # Run the bot
         logging.info("Telegram bot is now running...")
-        application.run_polling(drop_pending_updates=True)
+        application.run_polling()
     except Exception as e:
         logging.error(f"Error starting Telegram bot: {e}")
 
