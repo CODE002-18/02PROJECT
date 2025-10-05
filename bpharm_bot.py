@@ -76,14 +76,18 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Initialize Telegram Bot
 def setup_telegram_bot():
     """Setup and run Telegram bot"""
-    application = Application.builder().token(BOT_TOKEN).build()
-    
-    # Add handlers
-    application.add_handler(CommandHandler("start", start))
-    application.add_handler(CallbackQueryHandler(button_handler))
-    
-    # Run the bot
-    application.run_polling(allowed_updates=Update.ALL_TYPES)
+    try:
+        application = Application.builder().token(BOT_TOKEN).build()
+        
+        # Add handlers
+        application.add_handler(CommandHandler("start", start))
+        application.add_handler(CallbackQueryHandler(button_handler))
+        
+        # Run the bot
+        logging.info("Telegram bot is now running...")
+        application.run_polling(drop_pending_updates=True)
+    except Exception as e:
+        logging.error(f"Error starting Telegram bot: {e}")
 
 # Run Flask in a separate thread
 def run_flask():
