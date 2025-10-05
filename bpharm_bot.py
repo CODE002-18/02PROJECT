@@ -15,8 +15,9 @@ logging.basicConfig(
 app = Flask(__name__)
 
 # Telegram Bot Token (replace with your actual token)
-BOT_TOKEN = "YOUR_BOT_TOKEN"
-BOT_USERNAME = "YOUR_BOT_USERNAME"
+import os
+BOT_TOKEN = os.getenv("BOT_TOKEN", "YOUR_BOT_TOKEN")
+BOT_USERNAME = os.getenv("BOT_USERNAME", "YOUR_BOT_USERNAME")
 
 # Flask Routes
 @app.route('/')
