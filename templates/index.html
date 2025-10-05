@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>B.Pharm Helper Bot</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Pharm Helper Bot - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <div class="container">
-    <h1>Welcome to B.Pharm Helper Bot</h1>
-    <p>This is the official website for semester-wise papers and guess papers.</p>
-    <a href="https://t.me/YOUR_BOT_USERNAME" class="btn">Open Telegram Bot</a>
-  </div>
+    <div class="container">
+        <h1>🎓 B.Pharm Helper Bot</h1>
+        <p class="description">
+            Welcome to the official website for semester-wise papers and guess questions. 
+            Get access to study materials, previous year papers, and expertly curated guess questions 
+            to help you excel in your B.Pharm exams.
+        </p>
+        
+        <div class="features">
+            <h2>✨ Features</h2>
+            <ul>
+                <li>📚 Semester-wise organized content</li>
+                <li>📝 Previous year question papers</li>
+                <li>🎯 Accurate guess questions</li>
+                <li>⚡ Instant access via Telegram</li>
+            </ul>
+        </div>
+        
+        <a href="https://t.me/{{ bot_username }}" class="btn btn-primary" target="_blank">
+            📱 Open Telegram Bot
+        </a>
+        
+        <div class="links">
+            <a href="/privacy-policy">Privacy Policy</a> | 
+            <a href="/terms">Terms & Conditions</a> | 
+            <a href="/contact">Contact Us</a>
+        </div>
+    </div>
 </body>
 </html>
