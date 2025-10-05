@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import os
 from flask import Flask, render_template
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
@@ -14,8 +15,7 @@ logging.basicConfig(
 # Flask App
 app = Flask(__name__)
 
-# Telegram Bot Token (replace with your actual token)
-import os
+# Telegram Bot Token (read from environment variables)
 BOT_TOKEN = os.getenv("BOT_TOKEN", "YOUR_BOT_TOKEN")
 BOT_USERNAME = os.getenv("BOT_USERNAME", "YOUR_BOT_USERNAME")
 
