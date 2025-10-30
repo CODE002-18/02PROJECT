@@ -8,7 +8,7 @@ WEBHOOK_PATH = "/webhook"
 WEBHOOK_URL = "https://zero2project-wutc.onrender.com" + WEBHOOK_PATH
 PAPER_FOLDER = "bpharm_bot_18"
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 # Semester-subject mapping (same as before)
 semesters = {
@@ -384,7 +384,7 @@ def webhook():
 # -------------------------
 # Entrypoint
 # -------------------------
-if _name_ == "_main_":
+if __name__ == "__main__":
     if TOKEN:
         try:
             webhook_url = f"https://api.telegram.org/bot{TOKEN}/setWebhook"
@@ -394,4 +394,4 @@ if _name_ == "_main_":
             print(f"Error setting webhook: {e}")
 
     port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port, debug=False)2
+    app.run(host="0.0.0.0", port=port, debug=False)
